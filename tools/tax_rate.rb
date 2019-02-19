@@ -13,8 +13,9 @@ def tax_rate(year,month,day)
     divide = t.children[7].inner_text.to_f
     rate.push(
       :iso_name => t.children[1].inner_text,
-      :name => t.children[3].inner_text,
-      :value => t.children[11].inner_text.sub(",","").to_f/divide
+      :full_name => t.children[3].inner_text,
+      :value => t.children[11].inner_text.sub(",","").to_f/divide,
+      :date => "#{year}-#{month.to_s.rjust(2,"0")}-#{day.to_s.rjust(2,"0")}"
     )
   end
   return rate
