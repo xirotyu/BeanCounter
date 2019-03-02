@@ -1,9 +1,15 @@
 require "./db.rb"
 
-class CCE < Sequel::Model(DB[:cce])
-  one_to_many :account_mutation, key: :account_id
+# class CCE < Sequel::Model(:cce)
+# end
+
+# class CCEMutation < Sequel::Model(:cce_mutation)
+# end
+
+class CCY < Sequel::Model(:ccy)
+  one_to_many :ccy_rate, key: :ccy_id
 end
 
-class CCEMutation < Sequel::Model(DB[:cce_mutation])
-  many_to_one :account, key: :account_id
+class CCYRate < Sequel::Model(:ccy_rate)
+  many_to_one :ccy, key: :ccy_id
 end

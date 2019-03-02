@@ -30,7 +30,7 @@ DB.create_table :ccy do
   Boolean     :primary
 end
 
-DB.create_table :ccy_conversion do
+DB.create_table :ccy_rate do
   primary_key :id
   foreign_key :ccy_id
   Date        :date
